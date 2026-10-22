@@ -1,0 +1,6 @@
+{
+  "appId": "com.astralex.memohelper",
+  "appName": "Memo Helper HSR",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
