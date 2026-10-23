@@ -1,4 +1,4 @@
-Name: Build Memo Helper HSR Android APK
+name: Build Memo Helper HSR Android APK
 
 on:
   push:
