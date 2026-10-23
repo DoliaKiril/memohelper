@@ -1,4 +1,4 @@
-name: Build Memo Helper HSR Android APK
+Name: Build Memo Helper HSR Android APK
 
 on:
   push:
@@ -42,9 +42,15 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x android/gradlew
 
+      - name: Build Web Assets (if required)
+        run: |
+          if [ -f package.json ] && npm run | grep -q "build"; then
+            npm run build
+          fi
+
       - name: Assemble Debug APK
         working-directory: ./android
-        run: ./gradlew assembleDebug
+        run: ./gradlew assembleDebug --stacktrace --info
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
